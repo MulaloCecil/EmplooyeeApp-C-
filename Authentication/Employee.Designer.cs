@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,16 +67,29 @@
             this.panel1.Size = new System.Drawing.Size(799, 76);
             this.panel1.TabIndex = 3;
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Red;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(712, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 34);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "Back";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 34.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(291, 0);
+            this.label1.Location = new System.Drawing.Point(218, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(279, 59);
+            this.label1.Size = new System.Drawing.Size(398, 59);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Employee ";
+            this.label1.Text = "Add Employee ";
             // 
             // groupBox1
             // 
@@ -128,7 +141,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 41);
             this.button2.TabIndex = 16;
-            this.button2.Text = "New";
+            this.button2.Text = "Edit";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -285,19 +298,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(799, 183);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Red;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(712, 22);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 25);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Back";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Employee
             // 

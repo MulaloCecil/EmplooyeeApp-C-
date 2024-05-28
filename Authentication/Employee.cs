@@ -54,7 +54,7 @@ namespace Authentication
             cnn.Parameters.AddWithValue("@Age", int.Parse(textBox3.Text));
             cnn.Parameters.AddWithValue("Email", textBox4.Text);
             cnn.Parameters.AddWithValue("@Salary", int.Parse(textBox5.Text));
-            cnn.Parameters.AddWithValue("@Dob", DateTime.Parse(textBox6.Text)); // Assuming textBox4 contains the date in a valid format
+            cnn.Parameters.AddWithValue("@Dob", DateTime.Parse(textBox6.Text));
             cnn.Parameters.AddWithValue("@Benefit", textBox7.Text);
 
             cnn.ExecuteNonQuery();
@@ -62,7 +62,16 @@ namespace Authentication
             con.Close();
 
             BindData();
+            MessageBox.Show("Employee added successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+            textBox7.Text = "";
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -60,18 +60,37 @@ namespace Authentication
                     using (SqlConnection conn = new SqlConnection(connectionString))
                     {
                         conn.Open();
-                        string query = "INSERT INTO reg (username, password) VALUES (@username, @password)";
-                        SqlCommand cmd = new SqlCommand(query, conn);
-                        cmd.Parameters.AddWithValue("@username", Username.Text);
-                        cmd.Parameters.AddWithValue("@password", Password.Text);
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        if (rowsAffected > 0)
+
+                        // Check if the username already exists
+                        string checkQuery = "SELECT COUNT(*) FROM reg WHERE username = @username";
+                        SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
+                        checkCmd.Parameters.AddWithValue("@username", Username.Text);
+                        int userCount = (int)checkCmd.ExecuteScalar();
+
+                        if (userCount > 0)
                         {
-                            MessageBox.Show("Registered Successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Username is already taken. Please choose a different username.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
                         {
-                            MessageBox.Show("Registration failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            // Proceed with registration
+                            string query = "INSERT INTO reg (username, password) VALUES (@username, @password)";
+                            SqlCommand cmd = new SqlCommand(query, conn);
+                            cmd.Parameters.AddWithValue("@username", Username.Text);
+                            cmd.Parameters.AddWithValue("@password", Password.Text);
+                            int rowsAffected = cmd.ExecuteNonQuery();
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Registered Successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                //Navigate back to the login screen after registering successfully
+                                Form1 form1 = new Form1();
+                                form1.ShowDialog();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Registration failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
                 }

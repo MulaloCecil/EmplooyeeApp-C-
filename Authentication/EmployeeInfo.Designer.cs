@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.back = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.r = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -40,12 +40,25 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel1.Controls.Add(this.r);
+            this.panel1.Controls.Add(this.back);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(972, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // back
+            // 
+            this.back.BackColor = System.Drawing.Color.Red;
+            this.back.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.back.ForeColor = System.Drawing.Color.White;
+            this.back.Location = new System.Drawing.Point(885, 3);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(75, 32);
+            this.back.TabIndex = 1;
+            this.back.Text = "Back";
+            this.back.UseVisualStyleBackColor = false;
+            this.back.Click += new System.EventHandler(this.r_Click);
             // 
             // label1
             // 
@@ -80,19 +93,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(972, 284);
             this.dataGridView1.TabIndex = 2;
             // 
-            // r
-            // 
-            this.r.BackColor = System.Drawing.Color.Red;
-            this.r.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r.ForeColor = System.Drawing.Color.White;
-            this.r.Location = new System.Drawing.Point(885, 3);
-            this.r.Name = "r";
-            this.r.Size = new System.Drawing.Size(75, 29);
-            this.r.TabIndex = 1;
-            this.r.Text = "Back";
-            this.r.UseVisualStyleBackColor = false;
-            this.r.Click += new System.EventHandler(this.r_Click);
-            // 
             // EmployeeInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -117,6 +117,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button r;
+        private System.Windows.Forms.Button back;
     }
 }
