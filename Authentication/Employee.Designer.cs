@@ -125,9 +125,9 @@
             this.button3.BackColor = System.Drawing.Color.Red;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button3.Location = new System.Drawing.Point(622, 252);
+            this.button3.Location = new System.Drawing.Point(574, 252);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 41);
+            this.button3.Size = new System.Drawing.Size(142, 41);
             this.button3.TabIndex = 17;
             this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = false;
@@ -140,7 +140,7 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Location = new System.Drawing.Point(414, 252);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 41);
+            this.button1.Size = new System.Drawing.Size(154, 41);
             this.button1.TabIndex = 15;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = false;
@@ -286,9 +286,9 @@
             this.button5.BackColor = System.Drawing.Color.Green;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button5.Location = new System.Drawing.Point(514, 252);
+            this.button5.Location = new System.Drawing.Point(414, 252);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(102, 41);
+            this.button5.Size = new System.Drawing.Size(154, 41);
             this.button5.TabIndex = 18;
             this.button5.Text = "Update";
             this.button5.UseVisualStyleBackColor = false;

@@ -16,6 +16,7 @@ namespace Authentication
         public Employee()
         {
             InitializeComponent();
+            button5.Visible=false;
         }
 
         SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=employeedb;Integrated Security=True");
@@ -138,7 +139,7 @@ namespace Authentication
 
             con.Open();
 
-            SqlCommand cnn = new SqlCommand("Insert into emptab(id,name,age,email,salary,dob,benefit) values(@id,@name,@age,@email,@salary,@dob,@benefit)", con);
+            SqlCommand cnn = new SqlCommand("Update emptab(name,age,email,salary,dob,benefit) values(@name,@age,@email,@salary,@dob,@benefit)", con);
 
             cnn.Parameters.AddWithValue("@Id", int.Parse(textBox1.Text));
             cnn.Parameters.AddWithValue("@Name", textBox2.Text);
@@ -190,6 +191,8 @@ namespace Authentication
                         textBox5.Text = reader.GetValue(3).ToString();
                         dateTimePicker1.Text = reader.GetValue(4).ToString();
                         textBox7.Text = reader.GetValue(5).ToString();
+
+                        button5.Visible = true;
                     }
                 }
                 else
@@ -201,6 +204,9 @@ namespace Authentication
                     textBox5.Text = "";
                     dateTimePicker1.Text = "";
                     textBox7.Text = "";
+
+                    button5.Visible = false; 
+                    button1.Visible = true;
                 }
                 con.Close();
             }
@@ -213,6 +219,9 @@ namespace Authentication
                 textBox5.Text = "";
                 dateTimePicker1.Text = "";
                 textBox7.Text = "";
+
+                button5.Visible = false;
+                button1.Visible = true;
             }
         }
     }
