@@ -135,19 +135,17 @@ namespace Authentication
 
         private void button5_Click(object sender, EventArgs e)
         {
-
-
             con.Open();
 
-            SqlCommand cnn = new SqlCommand("Update emptab(name,age,email,salary,dob,benefit) values(@name,@age,@email,@salary,@dob,@benefit)", con);
+            SqlCommand cnn = new SqlCommand("UPDATE emptab SET name = @name, age = @age, email = @email, salary = @salary, dob = @dob, benefit = @benefit WHERE Id = @Id", con);
 
             cnn.Parameters.AddWithValue("@Id", int.Parse(textBox1.Text));
-            cnn.Parameters.AddWithValue("@Name", textBox2.Text);
-            cnn.Parameters.AddWithValue("@Age", int.Parse(textBox3.Text));
-            cnn.Parameters.AddWithValue("Email", textBox4.Text);
-            cnn.Parameters.AddWithValue("@Salary", int.Parse(textBox5.Text));
-            cnn.Parameters.AddWithValue("@Dob", DateTime.Parse(dateTimePicker1.Text));
-            cnn.Parameters.AddWithValue("@Benefit", textBox7.Text);
+            cnn.Parameters.AddWithValue("@name", textBox2.Text);
+            cnn.Parameters.AddWithValue("@age", int.Parse(textBox3.Text));
+            cnn.Parameters.AddWithValue("@email", textBox4.Text);
+            cnn.Parameters.AddWithValue("@salary", int.Parse(textBox5.Text));
+            cnn.Parameters.AddWithValue("@dob", DateTime.Parse(dateTimePicker1.Text));
+            cnn.Parameters.AddWithValue("@benefit", textBox7.Text);
 
             cnn.ExecuteNonQuery();
 
@@ -155,7 +153,6 @@ namespace Authentication
 
             BindData();
             MessageBox.Show("Information updated successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
 
             textBox1.Text = "";
             textBox2.Text = "";
