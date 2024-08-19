@@ -17,6 +17,7 @@ namespace Authentication
         {
             InitializeComponent();
             button5.Visible=false;
+            button3.Visible=false;
         }
 
         SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=employeedb;Integrated Security=True");
@@ -190,6 +191,7 @@ namespace Authentication
                         textBox7.Text = reader.GetValue(5).ToString();
 
                         button5.Visible = true;
+                        button3.Visible = true;
                     }
                 }
                 else
@@ -204,6 +206,8 @@ namespace Authentication
 
                     button5.Visible = false; 
                     button1.Visible = true;
+                    button3.Visible = true;
+
                 }
                 con.Close();
             }
@@ -219,6 +223,7 @@ namespace Authentication
 
                 button5.Visible = false;
                 button1.Visible = true;
+                button3.Visible= false;
             }
         }
     }
